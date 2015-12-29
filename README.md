@@ -20,4 +20,10 @@ Somes [LaTeX](https://fr.wikipedia.org/wiki/LaTeX) .sty file :
 - devis.sty / facture.sty : Packages de création de devis et de factures Françaises.
 - tango.sty : Définition des couleurs [Tango](http://tango.freedesktop.org/)
 
+## sty usage
+
+You can Clone this repo and add sty path in TEXINPUTS environement variable like
+
+  git clone https://github.com/tclavier/LaTeX.git ~/latex
+  echo 'TEXINPUTS=$TEXINPUTS:~/latex/sty/' >> ~/.bashrc
 
