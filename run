@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e 
+set -x 
+NEW_USER=foobar
+NEW_GROUP=$NEW_USER
+NEW_UID=$(stat -c "%u" /data)
+NEW_GID=$(stat -c "%g" /data)
+
+[ $NEW_GID != 0 ] && addgroup --gid $NEW_GID $NEW_GROUP
+[ $NEW_UID != 0 ] && useradd --create-home --uid $NEW_UID --gid $NEW_GID $NEW_USER
+
+cd /data
+su - $NEW_USER --preserve-environment -c "$@"
