@@ -1,0 +1,54 @@
+\ProvidesPackage{beamerthemeAzae}[2012/01/06]
+
+%% Beamer Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\useinnertheme{default}
+\usetheme{default}
+\useoutertheme{default}
+
+\usepackage{color}
+\usepackage{libertine}
+\usepackage[T1]{fontenc}
+
+% Les couleurs Tango
+\definecolor{Aluminium1}{rgb}{0.93,0.93,0.92}
+\definecolor{Aluminium2}{rgb}{0.82,0.84,0.81}
+\definecolor{Aluminium3}{rgb}{0.73,0.74,0.71}
+\definecolor{Aluminium4}{rgb}{0.53,0.54,0.52}
+\definecolor{Aluminium5}{rgb}{0.33,0.34,0.32}
+\definecolor{Aluminium6}{rgb}{0.18,0.20,0.21}
+
+\definecolor{Orange}{rgb}{0.96,0.47,0.00}
+\definecolor{Chameleon}{rgb}{0.45,0.82,0.09}
+\definecolor{SkyBlue}{rgb}{0.20,0.39,0.64}
+\definecolor{ScarletRed}{rgb}{0.80,0.00,0.00}
+
+\definecolor{DarkOrange}{rgb}{0.80,0.36,0.00}
+\definecolor{DarkChameleon}{rgb}{0.30,0.60,0.02}
+\definecolor{DarkSkyBlue}{rgb}{0.12,0.29,0.53}
+\definecolor{DarkScarletRed}{rgb}{0.64,0.00,0.00}
+
+\definecolor{LightOrange}{rgb}{0.98,0.68,0.24}
+\definecolor{LightChameleon}{rgb}{0.54,0.88,0.20}
+\definecolor{LightSkyBlue}{rgb}{0.45,0.62,0.81}
+\definecolor{LightScarletRed}{rgb}{0.93,0.16,0.16}
+
+\mode<presentation>
+\setbeamerfont{title}{size=\Huge}
+\setbeamercolor{structure}{fg=Aluminium6}
+\setbeamercolor{normal text}{bg=white, fg=black}
+\setbeamercolor{titlelike}{fg=DarkSkyBlue}
+
+\setbeamertemplate{frametitle}[default][left]
+\setbeamertemplate{background canvas}[vertical shading][bottom=white, middle=Aluminium2, midpoint=0.8, top=Aluminium5]
+\setbeamertemplate{itemize item}{\textcolor{DarkOrange}{\small$\blacksquare$}}
+\setbeamertemplate{itemize subitem}{\textcolor{DarkChameleon}{$\blacksquare$}}
+\setbeamertemplate{itemize subsubitem}{\textcolor{DarkScarletRed}{$\blacksquare$}}
+
+\setbeamerfont{frametitle}{size=\huge}
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+
+\setbeamercolor{block title}{fg=DarkOrange,bg=Aluminium3}
+\setbeamercolor{alerted text}{fg=DarkChameleon}
+
+%\usecolortheme[named=DarkOrange]{structure}

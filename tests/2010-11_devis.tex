@@ -1,0 +1,35 @@
+\documentclass[french,12pt, origdate]{article}
+\usepackage{devis}
+
+
+%%%%%%%%%%%%%%%%%%%%% Spécifique entreprise %%%%%%%%%%%%%%%%%%%%%%%%%%
+\societe{{{\textsc{Thomas Clavier}}}\\12 rue github\\12345 Geekland\\http://tcweb.org\\courriel : tom@tcweb.org\\TVA FR0000000000}
+\tva{0}  % Taux de la TVA, 0 pour les auto-entrepreneur
+\rib{00001}{00001}{0000001A001}{01} %banque, guichet, compte, clé
+\iban{FR01 0001 0002 0003 0004 0005 006}
+\bic{ABCDEFGHIJK}
+\basdepage{\small \textsc{Thomas Clavier}, EURL au capitale de 9\euro{} - Siren 111~222~333 - R.C.S. Geek Valey.}
+
+%%%%%%%%%%%%%%%%%%%%% A MODIFIER DANS LA FACTURE %%%%%%%%%%%%%%%%%%%%%
+
+\def\DevisAcquittee	{non}		% Devis acquittée : oui/non
+\def\DevisLieu	    {Geekland}	% Lieu de l'édition de la devis
+\def\DevisObjet	    {Devis formation Scrum}	% Objet du document
+\def\DevisAcompte   {oui}	% demande d'acompte
+% Description de la devis
+\def\DevisDescr	{%
+Voici le détail de la formation "scrum par la pratique" du mois de juillet 2010.
+}
+
+% Infos Client
+\client{\textbf{Client Tutu}\\23 Boulevard des clients \\  67890 Clientland}	% Nom et Adresse du clien
+
+% Liste des produits facturés : Désignation, quantité, prix unitaire HT
+\AjouterProduit	{Journée de formation Agile}		{4}		{1000}
+\AjouterProduit	{Journée d'accompagnement Agile}		{3}		{1000}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\devis
+\end{document}

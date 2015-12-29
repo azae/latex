@@ -1,0 +1,39 @@
+\documentclass[french,12pt, origdate]{article}
+\usepackage{facture}
+
+
+%%%%%%%%%%%%%%%%%%%%% Spécifique entreprise %%%%%%%%%%%%%%%%%%%%%%%%%%
+\societe{{{\textsc{Thomas Clavier}}}\\12 rue github\\12345 Geekland\\http://tcweb.org\\courriel : tom@tcweb.org}
+\tva{0}  % Taux de la TVA, 0 pour les auto-entrepreneur
+\rib{00001}{00001}{0000001A001}{01} %banque, guichet, compte, clé
+\iban{FR01 0001 0002 0003 0004 0005 006}
+\bic{ABCDEFGHIJK}
+
+%%%%%%%%%%%%%%%%%%%%% A MODIFIER DANS LA FACTURE %%%%%%%%%%%%%%%%%%%%%
+
+%\def\FactureNum			  {2010-123}	% Numéro de facture
+\def\FactureAcquittee	{non}		% Facture acquittée : oui/non
+\def\FactureLieu	    {Geekland}	% Lieu de l'édition de la facture
+\def\FactureObjet	    {Facture formation Scrum}	% Objet du document
+\def\FactureAvoir     {non}
+% Description de la facture
+\def\FactureDescr	{%
+Voici le détail de la formation "scrum par la pratique" du mois de juillet 2010.
+}
+
+% Infos Client
+\client{\textbf{Client Tutu}\\23 Boulevard des clients \\  67890 Clientland}	% Nom et Adresse du clien
+
+% Liste des produits facturés : Désignation, quantité, prix unitaire HT
+\AjouterProduit	{Journée de formation Agile}		{4}		{1000}
+\AjouterProduit	{Journée d'accompagnement Agile}		{3}		{1000}
+\AjouterProduit	{Jeux de planning pocker}		{2}		{0}
+
+% Si des acomptes on été versé.
+\AjouterAcompte	{Acompte reçu le 12 juin 2010}		{500}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\facture
+\end{document}
