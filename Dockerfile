@@ -1,6 +1,12 @@
 from debian
-run apt-get update && apt-get install -y texlive-latex-extra texlive-lang-french && apt-get clean
-run apt-get update && apt-get install -y make && apt-get clean
+run apt-get update \
+      && apt-get install -y \
+      inkscape \
+      make \
+      texlive-fonts-extra \
+      texlive-lang-french \
+      texlive-latex-extra \
+      && apt-get clean
 env TEXINPUTS :/usr/local/share/latex/sty:/usr/local/share/latex/common
 add common /usr/local/share/latex/common/
 add sty /usr/local/share/latex/sty/
