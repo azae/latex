@@ -10,7 +10,7 @@ use the `/data` volume to mount your tex directory and run :
 
 or if your LaTeX source directory is managed by Makefile : 
 
-      docker run --rm -it -v $(pwd)/tests/:/data azae/latex make pdf
+      docker run --rm -it -v $(pwd):/data azae/latex make pdf
 
 # LaTeX sty subdirectory
 
