@@ -3,6 +3,7 @@ run sed -e 's/deb.debian.org/debian.mirrors.ovh.net/g' -i /etc/apt/sources.list
 run apt-get update \
  && apt-get install -y \
     inkscape \
+    latex-cjk-common \
     make \
     texlive-fonts-extra \
     texlive-lang-french \
