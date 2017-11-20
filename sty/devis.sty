@@ -103,7 +103,7 @@
 
 \newcommand{\AjouterProduit}[3]{%	Arguments : Désignation, quantité, prix unitaire HT
 	\FPround{\prix}{#3}{2}
-	\FPeval{\montant}{#2 * #3}
+	\FPeval{\montant}{#2 * \prix}
 	\FPround{\montant}{\montant}{2}
 	\FPadd{\TotalHT}{\TotalHT}{\montant}
 	
