@@ -15,4 +15,11 @@ do
   ARGS="$ARGS $ARG"
 done
 
+if [ $NEW_GID == 0 ] 
+then
+  if [ $NEW_UID == 0 ]
+  then 
+    exec "$ARGS"
+  fi
+fi
 exec su - $NEW_USER --preserve-environment -c "$ARGS"
