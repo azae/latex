@@ -5,8 +5,8 @@ NEW_GROUP=$NEW_USER
 NEW_UID=$(stat -c "%u" /data)
 NEW_GID=$(stat -c "%g" /data)
 
-[ $NEW_GID != 0 ] && groupadd --gid $NEW_GID $NEW_GROUP
-[ $NEW_UID != 0 ] && useradd --create-home --uid $NEW_UID --gid $NEW_GID $NEW_USER
+[ $NEW_GID -gt 0 ] && groupadd --gid $NEW_GID $NEW_GROUP
+[ $NEW_UID -gt 0 ] && useradd --create-home --uid $NEW_UID --gid $NEW_GID $NEW_USER
 
 cd /data
 
@@ -14,5 +14,13 @@ for ARG in "$@"
 do
   ARGS="$ARGS $ARG"
 done
+
+if [ $NEW_GID -eq 0 ] 
+then
+  if [ $NEW_UID -eq 0 ] 
+  then
+    exec $ARGS
+  fi
+fi
 
 exec su - $NEW_USER --preserve-environment -c "$ARGS"
