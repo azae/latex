@@ -15,7 +15,7 @@ build-cli:
     - docker build -t $NAME .
     - docker push $NAME
 
-build-cli:
+build-gitlab:
   stage: build
   image: docker:latest
   services:
