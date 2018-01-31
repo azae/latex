@@ -22,6 +22,6 @@ build-gitlab:
     - docker:dind
   script:
     - docker login registry.gitlab.com -u tclavier -p $DOCKER_TOKEN
-    - docker build -t $NAME-gitlab .
+    - docker build -t $NAME-gitlab --file=Dockerfile.gitlab .
     - docker push $NAME-gitlab
 
