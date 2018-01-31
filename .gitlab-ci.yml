@@ -1,0 +1,27 @@
+variables:
+	- NAME: registry.gitlab.com/azae/latex
+
+stages:
+  - build-cli
+  - build-gitlab
+
+build-cli:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker login registry.gitlab.com -u tclavier -p $DOCKER_TOKEN
+    - docker build -t $NAME .
+    - docker push $NAME
+
+build-cli:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker login registry.gitlab.com -u tclavier -p $DOCKER_TOKEN
+    - docker build -t $NAME-gitlab .
+    - docker push $NAME-gitlab
+
