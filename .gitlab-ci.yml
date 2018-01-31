@@ -5,8 +5,8 @@ stages:
   - build-cli
   - build-gitlab
 
-build-cli:
-  stage: build
+docker-build-cli:
+  stage: build-cli
   image: docker:latest
   services:
     - docker:dind
@@ -15,8 +15,8 @@ build-cli:
     - docker build -t $NAME .
     - docker push $NAME
 
-build-gitlab:
-  stage: build
+docker-build-gitlab:
+  stage: build-gitlab
   image: docker:latest
   services:
     - docker:dind
