@@ -5,15 +5,17 @@ stages:
   - build-cli
   - build-gitlab
 
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
 build-cli:
   stage: build-cli
   image: docker:latest
   services:
     - docker:dind
   script:
-    - docker login registry.gitlab.com -u tclavier -p $DOCKER_TOKEN
-    - docker build -t $NAME .
-    - docker push $NAME
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
 
 build-gitlab:
   stage: build-gitlab
@@ -21,7 +23,6 @@ build-gitlab:
   services:
     - docker:dind
   script:
-    - docker login registry.gitlab.com -u tclavier -p $DOCKER_TOKEN
-    - docker build -t $NAME-gitlab --file=Dockerfile.gitlab .
-    - docker push $NAME-gitlab
+    - docker build -t $CI_REGISTRY_IMAGE:gitlab --file=Dockerfile.gitlab .
+    - docker push $CI_REGISTRY_IMAGE:gitlab
 
