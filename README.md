@@ -1,6 +1,6 @@
 # Warning
 
-This répo was migrate to [gitlab](https://gitlab.com/azae/latex)
+This répo was migrated to [gitlab](https://gitlab.com/azae/latex)
 
 
 # LaTeX container
